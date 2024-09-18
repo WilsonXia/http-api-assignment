@@ -45,8 +45,8 @@
       else if (acceptedType === 'text/xml') {
         // Parse XML
         let resText = await response.text();
-        resObj = new DOMParser().parseFromString(resText, 'text/xml');
-        content.innerHTML += `<p>${resObj.querySelector('response').textContent}</p>`;
+        resObj = new window.DOMParser().parseFromString(resText, 'text/xml');
+        content.innerHTML += `<p>${resObj.querySelector('message').textContent}</p>`;
       }
     }
 

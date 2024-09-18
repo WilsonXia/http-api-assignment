@@ -24,7 +24,7 @@ const handleCheck = (request, response, code, messageStr) => {
   // Handle the response depending on what was asked
   if (request.acceptedTypes[0] === 'text/xml') {
     // XML Response
-    data = `<response> <message>${messageStr}</message> </response>`;
+    data = `<response><message>${messageStr}</message> </response>`;
     handleResponse(request, response, code, 'text/xml', data);
   } else {
     // JSON Response, default
@@ -38,7 +38,7 @@ const handleCheckWithID = (request, response, code, messageStr, id) => {
   // Handle the response depending on what was asked
   if (request.acceptedTypes[0] === 'text/xml') {
     // XML Response
-    data = `<response><message>${messageStr}</message></response>`;
+    data = `<response><message>${messageStr}</message><id>${id}</id></response>`;
     handleResponse(request, response, code, 'text/xml', data);
   } else {
     // JSON Response
